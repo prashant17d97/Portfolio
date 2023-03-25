@@ -15,7 +15,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body{
-    background-color: #202020;
+    background-color: #181818;
     font-family: 'DM Sans';font-size: 22px;
     color: white;
 }
@@ -101,8 +101,8 @@ a:hover{
   height: 550px;
   text-align: center;
   border-radius: 50%;
-  background-color: #181818;
-  border: 1px solid#383838;
+  background-color: #202020;
+  border: 1px solid#202020;
 }
 
 .container img{
@@ -146,3 +146,47 @@ a:hover{
 #detail_paragraph{
   text-align: center;
 }
+.profile{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 80%;
+}
+
+.profile div{
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+.profile p{
+  margin: 10px;
+}
+
+#full_name_text{
+  font-size: 18;
+  font-weight: bold;
+}
+
+#full_name{
+  font-size: 18;
+  font-weight: normal;
+}
+
+.profile div div {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background-color: #212121;
+  border: 1px solid transparent;
+}
+
+.profile div div div{
+  border-radius: 50%;
+  display: block;
+  margin: 25px;
+  width: 12px;
+  background-color: #27AE60;
+  height: 12px;
+}
+
