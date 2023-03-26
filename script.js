@@ -11,3 +11,8 @@ function changed(Paragraph) {
     document.getElementById(Paragraph).innerHTML = value;
     console.log('object :>> ', 10 + 10);
 }
+
+
+function smoothScroll(idValue) {
+    smoothScroll(document.getElementById(idValue))
+}

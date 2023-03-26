@@ -178,6 +178,7 @@ a:hover{
   width: 62px;
   height: 62px;
   border-radius: 50%;
+  display: inline-block;
   background-color: #212121;
   border: 1px solid transparent;
 }
