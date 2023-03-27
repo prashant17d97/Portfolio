@@ -1,18 +1,204 @@
-var isNot = true
-function changed(Paragraph) {
-    var value=""
-    if (isNot) {
-        isNot = false
-        value = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos ";
-    } else {
-        isNot = true
-        value = "Hi, I'm just dummy text.";
-    }
-    document.getElementById(Paragraph).innerHTML = value;
-    console.log('object :>> ', 10 + 10);
+function smoothScroll(event) {
+    event.preventDefault();
+    const targetId = event.target.getAttribute("href");
+    document.querySelector(targetId).scrollIntoView({
+      behavior: "smooth"
+    });
 }
 
 
-function smoothScroll(idValue) {
-    smoothScroll(document.getElementById(idValue))
+
+function dynamicProfile(){
+    const container = document.getElementsByClassName("profile");          
+    let data = [
+              {
+                heading: "Full name",
+                link: "",
+                target: "",
+                name: "Prashant Kumar Singh",
+              },
+              {
+                heading: "Mail me",
+                link: "mailto:prashantsinghsca@gmail.com",
+                target: "",
+                name: "@Gmail",
+              },
+              {
+                heading: "Contact on",
+                link: "tel:+91735257915",
+                target: "",
+                name: "+91 7352579915",
+              },
+              {
+                heading: "Github",
+                link: "https://github.com/prashant17d97",
+                target: "_blank",
+                name: "@prashant17d97",
+              },
+              {
+                heading: "LinkedIn",
+                link: "https://www.linkedin.com/in/prashant-d97/",
+                target: "_blank",
+                name: "@prashant-d97/",
+              },
+            ];
+          
+    for (let i = 0; i < container.length; i++) {
+              for (let j = 0; j < data.length; j++) {
+                const outerCircle = document.createElement("div");
+                outerCircle.classList.add("outer_circle_dot");
+          
+                const innerCircle = document.createElement("div");
+                innerCircle.classList.add("inner_circle_dot");
+                outerCircle.appendChild(innerCircle);
+          
+                const heading = document.createElement("p");
+                heading.id="text_heading";
+                heading.textContent = data[j].heading;
+          
+                const link = document.createElement("a");
+                link.id="link_value";
+                link.href = data[j].link;
+                link.target = data[j].target;
+                link.textContent = data[j].name;
+          
+                const profileContainer = document.createElement("div");
+                profileContainer.classList.add("innerView");
+                profileContainer.appendChild(outerCircle);
+                profileContainer.appendChild(heading);
+                profileContainer.appendChild(link);
+          
+                container[i].appendChild(profileContainer);
+              }
+       }
+
+}
+
+function work(){
+    const servicesContainer = document.getElementsByClassName("services");
+    let works=[
+        {
+            icon:"android.svg",
+            position:"Android App\n Development",
+            alt:"Android"
+        },
+        {
+            icon:"web_dev.svg",
+            position:"Web\n Development",
+            alt:"web_development.svg"
+        },
+        {
+            icon:"software_devlopment.svg",
+            position:"Software\n Development",
+            alt:"software_development.svg"
+        },
+        {
+            icon:"web_design.svg",
+            position:"Web\nDesign",
+            alt:"web_design.svg"
+        },
+    ]
+
+    for(let i=0; i < servicesContainer.length; i++){
+        for(let j=0; j < works.length; j++){
+    
+            const image = document.createElement("img");
+            image.src=works[j].icon
+            image.alt=works[j].alt
+
+            const position = document.createElement("p");
+            position.textContent=works[j].position
+
+            const work = document.createElement("div");
+            work.classList.add("work");
+            work.appendChild(image);
+            work.appendChild(position);
+            servicesContainer[i].appendChild(work);
+        }
+    }
+}
+
+function skills(){
+    const servicesContainer = document.getElementsByClassName("Skills_Container");
+    let works=[
+        {
+            icon:"android.svg",
+            position:"ANDROID",
+            alt:"Android"
+        },
+        {
+            icon:"kotlin.png",
+            position:"KOTLIN",
+            alt:"kotlin.png"
+        },
+        {
+            icon:"jetpack-compose.png",
+            position:"JETPACK COMPOSE",
+            alt:"jetpack-compose.png"
+        },
+        {
+            icon:"java.png",
+            position:"JAVA",
+            alt:"java.png"
+        },
+        {
+            icon:"java_script.png",
+            position:"JAVASCRIPT",
+            alt:"java_script.png"
+        },
+        {
+            icon:"css.png",
+            position:"CSS",
+            alt:"css.png"
+        },
+        {
+            icon:"html.png",
+            position:"HTML",
+            alt:"html.png"
+        },
+    ]
+
+    for(let i=0; i < servicesContainer.length; i++){
+        for(let j=0; j < works.length; j++){
+    
+            const image = document.createElement("img");
+            image.src=works[j].icon
+            image.alt=works[j].alt
+
+            const position = document.createElement("p");
+            position.textContent=works[j].position
+
+            const work = document.createElement("div");
+            work.appendChild(image);
+            work.appendChild(position);
+            servicesContainer[i].appendChild(work);
+        }
+    }
+}
+
+function mailForm(){
+    const form = document.querySelector('#myForm');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = form.elements['firstName'].value;
+  const lastName = form.elements['lastName'].value;
+  const email = form.elements['email'].value;
+  const message = form.elements['message'].value;
+  const phone = form.elements['phone'].value;
+
+  const subject = 'New message from ' + name+' '+lastName;
+  const body = 'From: ' + email + '\n\n' + message +'\n\n'+ 'Contact No.' + phone;
+
+  const mailtoLink = 'mailto:youremail@example.com' + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+  window.location.href = mailtoLink;
+});
+}
+
+window.onload = function() {
+    dynamicProfile();
+    work();
+    skills();
 }

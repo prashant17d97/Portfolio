@@ -1,6 +1,8 @@
 <html>
     <head>
-        <script src="script.js"></script>
+        <script src="script.js">
+          window.onload=dynamicProfile();
+        </script>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
     <body>
@@ -8,14 +10,14 @@
             <h1>Prashant</h1>
             <nav>
               <ul>
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about_me">About</a></li>
-                <li><a href="#full_name_text">Contact</a></li>
+                <li><a href="#header" onclick="smoothScroll(event)">Home</a></li>
+                <li><a href="#about_me" onclick="smoothScroll(event)">About</a></li>
+                <li><a href="#getInTouch" onclick="smoothScroll(event)">Contact</a></li>
               </ul>
             </nav>
           </div>
 
-          <div class="about">
+        <div class="about">
             <div class="person_detal">
               <p id="name">Hi, I am<br> Prashant</p>
               <p id="position">Native Android Developer</p>
@@ -25,13 +27,11 @@
               </div>
             </div>
             <div class="container">
-              <img src="pks.png" alt="A beautiful image">
+              <img src="pks.png" alt="Profile Image">
             </div>
-            
           </div>
 
-
-          <div class="about_me">
+        <div class="about_me">
             <h1 id="about_me">About Me</h1>
             <p id="detail_paragraph">As an Android Developer since October 2021, I have gained extensive experience by working on over 10 industrial
               projects and have contributed to some libraries as well. I am proficient in Kotlin and Java programming languages
@@ -41,54 +41,43 @@
               collaborating with cross-functional teams to analyze requirements and develop solutions that meet business
               objectives. My ability to learn quickly and adapt to new technologies makes me an asset to any development
               team.</p>
-          </div>
+        </div>
 
-          <div class="profile">
-            <div>
-              <div>
-                <div></div>
-              </div>
-              <p id="full_name_text">Full name</p>
-              <p id="full_name">Prashant Kumar Singh</p>
-            </div>
-
-            <div>
-              <div>
-                <div></div>
-              </div>
-              <p id="full_name_text">Mail me</p>
-              <p id="full_name"><a href="mailto:prashantsinghsca@gmail.com" target="_blank">prashantsinghsca@gmail.com</a></p>
-            </div>
-
-            <div>
-              <div>
-                <div></div>
-              </div>
-              <p id="full_name_text">Github</p>
-              <p id="full_name"><a href="https://github.com/prashant17d97" target="_blank">Github</a></p>
-            </div>
-
-            <div>
-              <div>
-                <div></div>
-              </div>
-              <p id="full_name_text">LinkedIn</p>
-              <p id="full_name"><a href="https://www.linkedin.com/in/prashant-d97/" target="_blank">LinkedIn</a></p>
-            </div>
-
-          <div>
-            <div>
-              <div></div>
-            </div>
-            <p id="full_name_text">Contact me</p>
-            <p id="full_name"><a href="tel:+91735257915">+91 7352579915</a></p>
-          </div>
+        <div class="profile">
         </div>
 
         <div class="i_Do">
           <h1 >What I Do</h1>
-          
+          <div class="services">
+          </div>
         </div>
 
+        <div>
+          <h1 id="skill_text">My Skills</h1>
+          <div class="Skills_Container">
+          </div>
+        </div>
+
+        
+          <h2 id="getInTouch">Get in touch</h2>
+
+          <form>
+            <div>
+              <input type="text" placeholder="First Name" id="firstName" name="firstName" required>
+              <input type="text" placeholder="Last Name" id="lastName" name="lastName" required>
+            </div>
+            <div>
+              <input type="email" placeholder="Email" id="email" name="email" required>
+              <input type="tel" placeholder="Phone" id="phone" name="phone" required>
+            </div>
+            <div>
+              <textarea id="message" name="message" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+
+        <footer>
+          <p id="scrollToTop">&#169; Prashant 2023</p>
+        </footer>
     </body>
 </html>
