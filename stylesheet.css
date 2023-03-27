@@ -18,6 +18,11 @@ body{
     background-color: #171717;
     font-family: 'DM Sans';font-size: 22px;
     color: white;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
