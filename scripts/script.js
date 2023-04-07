@@ -78,22 +78,22 @@ function work(){
     const servicesContainer = document.getElementsByClassName("services");
     let works=[
         {
-            icon:"android.svg",
+            icon:"..\\resource\\android.svg",
             position:"Android App\n Development",
             alt:"Android"
         },
         {
-            icon:"web_dev.svg",
+            icon:"..\\resource\\web_dev.svg",
             position:"Web\n Development",
             alt:"web_development.svg"
         },
         {
-            icon:"software_devlopment.svg",
+            icon:"..\\resource\\software_devlopment.svg",
             position:"Software\n Development",
             alt:"software_development.svg"
         },
         {
-            icon:"web_design.svg",
+            icon:"..\\resource\\web_design.svg",
             position:"Web\nDesign",
             alt:"web_design.svg"
         },
@@ -122,37 +122,37 @@ function skills(){
     const servicesContainer = document.getElementsByClassName("Skills_Container");
     let works=[
         {
-            icon:"android.svg",
+            icon:"..\\resource\\android.svg",
             position:"ANDROID",
             alt:"Android"
         },
         {
-            icon:"kotlin.png",
+            icon:"..\\resource\\kotlin.png",
             position:"KOTLIN",
             alt:"kotlin.png"
         },
         {
-            icon:"jetpack-compose.png",
+            icon:"..\\resource\\jetpack-compose.png",
             position:"JETPACK COMPOSE",
             alt:"jetpack-compose.png"
         },
         {
-            icon:"java.png",
+            icon:"..\\resource\\java.png",
             position:"JAVA",
             alt:"java.png"
         },
         {
-            icon:"java_script.png",
+            icon:"..\\resource\\java_script.png",
             position:"JAVASCRIPT",
             alt:"java_script.png"
         },
         {
-            icon:"css.png",
+            icon:"..\\resource\\css.png",
             position:"CSS",
             alt:"css.png"
         },
         {
-            icon:"html.png",
+            icon:"..\\resource\\html.png",
             position:"HTML",
             alt:"html.png"
         },
