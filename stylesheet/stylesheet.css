@@ -30,6 +30,7 @@ body::-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  width: 100%;
 }
 
 .about {
@@ -113,20 +114,30 @@ a:hover{
 }
 
 .container {
-  width: 550px;
-  height: 550px;
+  width: auto;
+  height: auto;
+  max-width: 550px;
+  max-height: 550px;
   text-align: center;
+  min-width: 275px;
+  min-height: 275px;
   border-radius: 50%;
   background-color: #202020;
   border: 1px solid#202020;
 }
 
 .container img{
+  width: auto;
+  height: auto;
+  min-width: 250px;
+  min-height: 250px;
   border-radius: 50%;
   display: block;
   margin: 25px;
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
 }
 
 #download_cv{
@@ -165,14 +176,19 @@ a:hover{
 .profile{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 0 auto;
   margin-top: 100px;
   width: 80%;
 }
 
-.profile div{
+.innerView{
   text-align: center;
+  display: inline-block;
+  position: relative;
+  width: 180px;
+  height: 180px;
 }
 
 .profile div p{
@@ -220,17 +236,19 @@ a:hover{
   text-align: center;
 }
 
-.servieces{
+.services {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 30px;
   width: 80%;
 }
-.work{
+
+.work {
   background-color: #212121;
-  margin: 50px;
+  margin: 10px;
   padding: 25px;
   display: inline-block;
   width: 220px;
@@ -275,7 +293,8 @@ font-size: 36px;
 .Skills_Container{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
   background-color: #212121;
   margin-top: 10px;
@@ -283,6 +302,7 @@ font-size: 36px;
   height: max-content;
 }
 .Skills_Container div{
+  flex-wrap: wrap;
   margin: 50px;
   width: 220px;
   height: max-content;

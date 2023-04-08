@@ -191,7 +191,7 @@ form.addEventListener('submit', function(event) {
   const subject = 'New message from ' + name+' '+lastName;
   const body = 'From: ' + email + '\n\n' + message +'\n\n'+ 'Contact No.' + phone;
 
-  const mailtoLink = 'mailto:youremail@example.com' + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  const mailtoLink = 'mailto:prashantsinghsca@gmail.com' + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
   window.location.href = mailtoLink;
 });
