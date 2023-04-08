@@ -33,9 +33,9 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
-.header h1{
+/* .header h1{
   color: transparent;
-}
+} */
 .about {
   display: flex;
   justify-content: space-between;
