@@ -176,26 +176,17 @@ function skills(){
     }
 }
 
-function mailForm(){
-    const form = document.querySelector('#myForm');
-
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const name = form.elements['firstName'].value;
-  const lastName = form.elements['lastName'].value;
-  const email = form.elements['email'].value;
-  const message = form.elements['message'].value;
-  const phone = form.elements['phone'].value;
-
-  const subject = 'New message from ' + name+' '+lastName;
-  const body = 'From: ' + email + '\n\n' + message +'\n\n'+ 'Contact No.' + phone;
-
-  const mailtoLink = 'mailto:prashantsinghsca@gmail.com' + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-  window.location.href = mailtoLink;
-});
-}
+function downloadCV() {
+    const doc = new jsPDF();
+    const content = document.getElementById("pdfContent");
+  
+    doc.html(content, {
+      callback: function () {
+        
+        doc.save("AtomicKotlin-sample.pdf");
+      },
+    });
+  }
 
 window.onload = function() {
     dynamicProfile();
