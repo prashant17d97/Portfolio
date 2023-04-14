@@ -119,8 +119,8 @@ a:hover{
 .container {
   width: auto;
   height: auto;
-  max-width: 550px;
-  max-height: 550px;
+  max-width: 420px;
+  max-height: 420px;
   text-align: center;
   min-width: 275px;
   min-height: 275px;
@@ -136,9 +136,9 @@ a:hover{
   min-height: 250px;
   border-radius: 50%;
   display: block;
-  margin: 25px;
-  max-width: 500px;
-  max-height: 500px;
+  margin: 20px;
+  max-width: 380px;
+  max-height: 380px;
   width: auto;
   height: auto;
 }
