@@ -429,10 +429,11 @@ button {
 .projects {
   height: 500px;
   width: 100%;
+  max-width: 1280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #212121;
+  background-color: #21212100;
 }
 .project-container {
   position: relative;
@@ -440,7 +441,6 @@ button {
   min-width: 320px;
   height: 90%;
   width: 100%;
-  padding: 50px;
   overflow: hidden;
 }
 .project-container .image {
