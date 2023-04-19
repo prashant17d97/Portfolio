@@ -189,141 +189,133 @@ function downloadCV() {
     });
 }
 
-function loadProject() {
-    // Sample data object
-    const projectsData = [
-        {
-          image: "img_1.jpg",
-          title: "Shiplovo",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quis dicta optio esse, pariatur corrupti. Fuga nostrum facilis recusandae, ipsam dicta distinctio eius accusantium debitis, expedita sequi in optio! Ab?",
-          link: "https://example.com/shiplovo"
-        },
-    
-        {
-            image: "img_1.jpg",
-            title: "Shiplovo",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quis dicta optio esse, pariatur corrupti. Fuga nostrum facilis recusandae, ipsam dicta distinctio eius accusantium debitis, expedita sequi in optio! Ab?",
-            link: "https://example.com/shiplovo"
-          },
-        // Add more projects data objects here...
-      ];
-      
-      // Get the container element
-      const projectsContainer = document.querySelector(".projects");
-      
-      // Loop through the data objects and create the HTML elements
-      projectsData.forEach(project => {
-        // Create the project holder div
-        const projectHolder = document.createElement("div");
-        projectHolder.classList.add("projectHolder");
-      
-        // Create the image element and set its src attribute
-        const image = document.createElement("img");
-        image.src = project.image;
-        projectHolder.appendChild(image);
-      
-        // Create the div element for the project details
-        const projectDetails = document.createElement("div");
-      
-        // Create the h2 element for the project title and set its text content
-        const title = document.createElement("h2");
-        title.textContent = project.title;
-        projectDetails.appendChild(title);
-      
-        // Create the p element for the project description and set its text content
-        const description = document.createElement("p");
-        description.textContent = project.description;
-        projectDetails.appendChild(description);
-      
-        // Create the button element for the project link and set its text content and href attribute
-        const button = document.createElement("button");
-        button.textContent = "Learn More";
-        button.href = project.link;
-        projectDetails.appendChild(button);
-      
-        projectHolder.appendChild(projectDetails);
-        projectsContainer.appendChild(projectHolder);
-      });
-    
-    initGallery();
+function loadProject(){
+    // Array of testimonial objects
+const testimonials = [
+    {
+      image: "..\\resource\\img1.jpg",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
+      name: "Marnie Lotter",
+      job: "Web Developer",
+    },
+    {
+      image: "..\\resource\\img2.jpg",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
+      name: "Marnie Lotter",
+      job: "Web Developer",
+    },
+    {
+      image: "..\\resource\\img3.jpg",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
+      name: "Marnie Lotter",
+      job: "Web Developer",
+    },
+    {
+      image: "..\\resource\\img5.jpg",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
+      name: "Marnie Lotter",
+      job: "Web Developer",
+    },
+    {
+      image: "..\\resource\\img6.jpg",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
+      name: "Marnie Lotter",
+      job: "Web Developer",
+    },
+    {
+      image: "..\\resource\\img7.jpg",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
+      name: "Marnie Lotter",
+      job: "Web Developer",
+    },
+    // Add more testimonial objects as needed
+  ];
+  
+  // Get the swiper-wrapper element
+  const swiperWrapper = document.querySelector(".project-content.swiper-wrapper");
+  
+  // Loop through the testimonials array and create HTML elements
+  testimonials.forEach((testimonial) => {
+    // Create testimonial slide element
+    const slide = document.createElement("div");
+    slide.className = "slide swiper-slide";
+  
+    // Create testimonial image element
+    const image = document.createElement("img");
+    image.src = testimonial.image;
+    image.alt = "";
+    image.className = "image";
+    slide.appendChild(image);
+  
+    // Create testimonial text element
+    const text = document.createElement("p");
+    text.textContent = testimonial.text;
+    slide.appendChild(text);
+  
+    // Create testimonial quote icon element
+    const quoteIcon = document.createElement("i");
+    quoteIcon.className = "bx bxs-quote-alt-left quote-icon";
+    slide.appendChild(quoteIcon);
+  
+    // Create testimonial details element
+    const details = document.createElement("div");
+    details.className = "details";
+  
+    // Create testimonial name element
+    const name = document.createElement("span");
+    name.className = "name";
+    name.textContent = testimonial.name;
+    details.appendChild(name);
+  
+    // Create testimonial job element
+    const job = document.createElement("span");
+    job.className = "job";
+    job.textContent = testimonial.job;
+    details.appendChild(job);
+  
+    slide.appendChild(details);
+  
+    // Add the testimonial slide element to the swiper-wrapper
+    swiperWrapper.appendChild(slide);
+  });
+  
+  
+  new Swiper(".swiper", {
+    slidesPerView: 1,
+    grabCursor: true,
+    loop: true,
+    spaceBetween: 10,
+    centeredSlides: true,
+    speed:1200,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+ 
 }
-var slideIndex,slides;
-function initGallery(){
-    slideIndex = 0;
-    slides=document.getElementsByClassName("projectHolder");
-    slides[slideIndex].style.opacity=1;
 
-    if(slides.length<2){
-        var nextPrevBtns=document.querySelector(".leftArrow,.rightArrow");
-        nextPrevBtns.style.display="none";
-        for (i = 0; i < nextPrevBtn.length; i++) {
-            nextPrevBtns[i].style.display="none";
-        }
-    }
-    setTimer();
-}
 
-function plusSlides(n) {
-    moveSlide(slideIndex+n);
-}
-function moveSlide(n){
-    var i;
-    var current,next;
-    var moveSlideAnimClass={
-          forCurrent:"",
-          forNext:""
-    };
-    var slideTextAnimClass;
-    if(n>slideIndex) {
-        if(n >= slides.length){n=0;}
-        moveSlideAnimClass.forCurrent="moveLeftCurrentSlide";
-        moveSlideAnimClass.forNext="moveLeftNextSlide";
-        slideTextAnimClass="slideTextFromTop";
-    }else if(n<slideIndex){
-        if(n<0){n=slides.length-1;}
-        moveSlideAnimClass.forCurrent="moveRightCurrentSlide";
-        moveSlideAnimClass.forNext="moveRightPrevSlide";
-        slideTextAnimClass="slideTextFromBottom";
-    }
-
-    if(n!=slideIndex){
-        next = slides[n];
-        current=slides[slideIndex];
-        for (i = 0; i < slides.length; i++) {
-            slides[i].className = "projectHolder";
-            slides[i].style.opacity=0;
-        }
-        current.classList.add(moveSlideAnimClass.forCurrent);
-        next.classList.add(moveSlideAnimClass.forNext);
-        slideIndex=n;
-        
-    }
-
-}
-var timer=null;
-function setTimer(){
-    timer=setInterval(function () {
-        plusSlides(1) ;
-    },5000);
-}
-
-function playPauseSlides() {
-    var playPauseBtn=document.getElementById("playPause");
-    if(timer==null){
-        setTimer();
-        playPauseBtn.style.backgroundPositionY="0px"
-    }else{
-        clearInterval(timer);
-        timer=null;
-        playPauseBtn.style.backgroundPositionY="-33px"
-    }
-}
-    
 
 window.onload = function() {
     work();
     skills();
-   
+    
+    
 }
 
 

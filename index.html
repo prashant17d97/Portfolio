@@ -6,8 +6,9 @@
         </script>
        
         <link rel="stylesheet" type="text/css" href="stylesheet\stylesheet.css">
+        <link rel="stylesheet" href="stylesheet/swiper-bundle.min.css" />
         <title>Protfolio || Prashant</title>
-
+        <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
         <meta charset="utf-8">
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -88,14 +89,26 @@
 
         <!-- Projects Field -->
         <h1 id="projet-heading">Projects</h1>
-        <div class="projects">
-          <!-- <div id="playPause" onclick="playPauseSlides()"></div> -->
-          <div onclick="plusSlides(-1)" class="nextPrevBtn leftArrow"><span class="arrow arrowLeft"></span></div>
-          <div onclick="plusSlides(1)" class="nextPrevBtn rightArrow"><span class="arrow arrowRight"></span></div>
-        </div>
+        
 
         <!-- Get in touch -->
           <h2 id="getInTouch">Get in touch</h2>
+
+          <section class="projects">
+            <div class="project-container swiper">
+              <div class="project-content swiper-wrapper">
+              </div>
+              <div class="swiper-button-next nav-btn"></div>
+              <div class="swiper-button-prev nav-btn"></div>
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+          </section>
+      
+          <!-- Swiper JS -->
+          <script src="script/swiper-bundle.min.js"></script>
+      
+          <!-- JavaScript -->
+          <!-- <script src="script/script.js"></script> -->
 
           <form
             class="form"

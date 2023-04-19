@@ -14,6 +14,7 @@
   src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 body{
   width: 95%;
     background-color: #171717;
@@ -424,181 +425,99 @@ button {
 
 /* projects style  */
 
-/* .projects::-webkit-scrollbar {
-  display: none;
-} */
-#projet-heading{
-  margin-top:100px;
-  align-self: start;
-  color: white;
-}
 
-
-.projects{
+.projects {
+  height: 250px;
   width: 100%;
-  min-height: 350px;
-  height: max-content;
-  margin: auto;
-  align-content: center;
-  background-color: #212121;
-  position: relative;
-  border-radius: 20px;
-}
-.projects:hover {
-  box-shadow: 0 0 100px #27ae5f44;
-}
-
-.projects .projectHolder{
-  width: 100%;
-  height: 100%;
-  position: absolute;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #21212100;
-  padding-left: 10px;
-  padding-right: 10px;
-  /* opacity: 0; */
-  border-radius: 20px;
+  justify-content: center;
+  background-color: #212121;
 }
-.projects .projectHolder img{
-  width: 175px;
-  height: 130px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #fdfdfd46;
-  margin-left: 15px;
+.project-container {
+  position: relative;
+  max-width: 1280px;
+  min-width: 320px;
+  height: 90%;
+  width: 100%;
+  padding: 50px;
+  overflow: hidden;
 }
-
-.projects .projectHolder div{
-  margin-right: 30px;
-  margin-left: 30px;
-}
-.projects .projectHolder div h2{
-  color: white;
-  text-align: start;
-}
-
-.projects .projectHolder div p{
-  color: white;
-}
-
-.projects .projectHolder div button{
-margin-right: 10px;
-width: 143px;
-height: 42px;
-border-radius: 7px;
-background-color: #27AE60;
-box-shadow: 0 2px 10px #27ae5f33;
-color: white;
-font-size: 14px;
-border: 0;
-cursor: pointer;
-}
-
-
-.projects .leftArrow,.projects .rightArrow{
+.project-container .image {
+  height: 50px;
   width: 50px;
-  background: #00000036;
-  position: absolute;
-  left: 0;
-  z-index: 1;
-  transition: background 0.5s;
-  height: 72px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  margin-top: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }
-.projects .rightArrow{
-  left: auto;
-  right: 0;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+.project-container .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #171717;
+  box-shadow: 0 0 10px #27AE60;
+  border-radius: 20px;
+  row-gap: 30px;
+  height: 100%;
+  width: 100%;
 }
-.projects .leftArrow:hover,.projects .rightArrow:hover{
-  background: #000000a8;
-  cursor: pointer;
+.slide p {
+  text-align: center;
+  padding: 0 160px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f3f3f3;
 }
-.arrow{
-  display: inline-block;
-  border: 3px solid white;
-  width: 10px;
-  height: 10px;
-  border-left: none;
-  border-bottom: none;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.slide .quote-icon {
+  font-size: 30px;
+  color: #27AE60;
 }
-.arrow.arrowLeft{
-  transform: rotateZ(-135deg);
+.slide .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
 }
-.arrow.arrowRight{
-  transform: rotateZ(45deg);
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8f8f8;
 }
-
-.moveLeftCurrentSlide{
-  animation-name: moveLeftCurrent;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode:forwards;
-
+.details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
 }
-.moveLeftNextSlide{
-  animation-name: moveLeftNext;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode:forwards;
+/* swiper button css */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
 }
-@keyframes moveLeftCurrent {
-  from {margin-left: 0;opacity: 1;}
-  to {margin-left: -100%;opacity: 1;}
+.nav-btn:hover {
+  background-color: rgba(224, 224, 224, 0.37);
 }
-@keyframes moveLeftNext {
-  from {margin-left: 100%;opacity: 1;}
-  to {margin-left: 0%;opacity: 1;}
+.nav-btn::after,
+.nav-btn::before {
+  font-size: 20px;
+  color: #fff;
 }
-
-.moveRightCurrentSlide{
-  animation-name: moveRightCurrent;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode:forwards;
+/* .swiper-pagination-bullet {
+  margin-top: 200px;
+  background-color: rgb(255, 255, 255);
 }
-.moveRightPrevSlide{
-  animation-name: moveRightPrev;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode:forwards;
-}
-@keyframes moveRightCurrent {
-  from {margin-left: 0;opacity: 1;}
-  to {margin-left: 100%;opacity: 1;}
-}
-@keyframes moveRightPrev {
-  from {margin-left: -100%;opacity: 1;}
-  to {margin-left: 0%;opacity: 1;}
-}
-.slideTextFromBottom {
-  animation-name: slideTextFromBottom;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
-}
-@keyframes slideTextFromBottom {
-  from {opacity: 0;margin-top: 100px}
-  to {opacity: 1;margin-top: 0px;}
-}
-.slideTextFromTop {
-  animation-name: slideTextFromTop;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
-}
-@keyframes slideTextFromTop {
-  from {opacity: 0;margin-top: -100px}
-  to {opacity: 1;margin-top: 0px;}
+.swiper-pagination-bullet-active {
+  background-color: #27AE60;
+} */
+@media screen and (max-width: 768px) {
+  .slide p {
+    padding: 0 20px;
+  }
+  .nav-btn {
+    display: none;
+  }
 }
