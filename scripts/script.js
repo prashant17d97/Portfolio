@@ -193,7 +193,7 @@ function loadProject(){
     // Array of testimonial objects
 const testimonials = [
     {
-      image: "..\\resource\\img1.jpg",
+      image: "..\\resource\\img2.jpg",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
       name: "Marnie Lotter",
