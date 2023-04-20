@@ -47,7 +47,7 @@ window.addEventListener('scroll', function() {
 });
 window.onload = function() {
   work();
-  skills();    
+  skills(); 
 }
 // Array of testimonial objects
 // Data object with project details
@@ -59,7 +59,7 @@ const projectsData = [
     client: "Blandford sarl, Morrocow",
     workLocation: "Apptunix, Mohali Punjab",
     role: "Android Developer",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, beatae soluta quos voluptate reiciendis est nam neque. Commodi eveniet veniam, rerum obcaecati cupiditate assumenda nemo asperiores perferendis error. Assumenda, maxime?̥",
+    description: "SHIPLOVO Courier is an Android application designed to streamline the delivery process for delivery personnel. The app facilitates the delivery of products or parcels from their assigned location to the product destination. It has been built using the MVVM architecture and incorporates various libraries like Retrofit, Hilt, Map SDK for live tracking, LiveData, data-binding, and Socket. The app also includes login authentication and UI XML for efficient user interface design. With this app, delivery personnel can effectively manage and track their deliveries, ensuring a smooth and hassle-free delivery experience.",
     link: "https://play.google.com/store/apps/details?id=com.shiplovo.driver"
   },
   {
@@ -69,7 +69,7 @@ const projectsData = [
     client: "Blandford sarl, Morrocow",
     workLocation: "Apptunix, Mohali Punjab",
     role: "Android Developer",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, beatae soluta quos voluptate reiciendis est nam neque. Commodi eveniet veniam, rerum obcaecati cupiditate assumenda nemo asperiores perferendis error. Assumenda, maxime?̥",
+    description: "SHIPLOVO is a feature-rich Android application designed for customers, offering two modules for food and parcel services. With an MVVM architecture and integration of various libraries like Retrofit, Hilt, Map SDK for live tracking, LiveData, Data Binding, and Socket, it provides a seamless and efficient user experience. Users can easily order their desired food from listed restaurants through the food module, and book a suitable vehicle from small to big trolley vans for moving their goods through the parcel module. The application also includes login authentication and utilizes XML for UI design, ensuring a visually appealing and user-friendly interface.",
     link: "https://play.google.com/store/apps/details?id=com.shiplovo.customer"
   },
   {
@@ -79,7 +79,7 @@ const projectsData = [
     client: "CURE Group GmbH, Germany",
     workLocation: "Apptunix, Mohali Punjab",
     role: "Android Developer",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, beatae soluta quos voluptate reiciendis est nam neque. Commodi eveniet veniam, rerum obcaecati cupiditate assumenda nemo asperiores perferendis error. Assumenda, maxime?̥",
+    description: "CURE: All Things Health is an innovative Android application that brings the pharmacy products right to your doorstep. Built on the robust MVVM architecture, the app utilizes various cutting-edge libraries like Retrofit, Hilt, Map SDK for live tracking, LiveData, Data Binding, and Socket for seamless performance. The app also features secure login authentication for enhanced user safety. The user interface is designed using XML for a visually appealing and user-friendly experience. With its comprehensive features and modern architecture, CURE: All Things Health is a one-stop solution for all your health-related needs.",
     link: "https://play.google.com/store/apps/details?id=app.getcure.customer"
   },
   // Add more project objects as needed
@@ -125,6 +125,7 @@ for (const project of projectsData) {
 
   // Create link element
   const linkElem = document.createElement('a');
+  linkElem.classList.add('slider-button-link');
   linkElem.href = project.link;
   linkElem.target = '_blank';
   const buttonElem = document.createElement('button');
@@ -141,8 +142,8 @@ for (const project of projectsData) {
 
   // Append slide div to project content wrapper
   projectContentWrapper.appendChild(slideDiv);
+ 
 }
-
 
 
 var swiper = new Swiper(".swiper", {
@@ -153,7 +154,7 @@ var swiper = new Swiper(".swiper", {
   centeredSlides: true,
   speed:1200,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   // pagination: {
@@ -164,6 +165,7 @@ var swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  
 });
 
 

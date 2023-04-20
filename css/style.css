@@ -39,6 +39,7 @@ body{
 .project-container {
   max-width: fit-content;
   min-width: 320px;
+  min-height: 370px;
   width: 100%;
   padding: 5px;
 }
@@ -47,6 +48,9 @@ body{
   display: flex;
   width: 100%;
   min-width: 20px;
+  min-height: 350px;
+  height: 700px;
+  max-height: 700px;
   align-content: center;
   background-color: #212121;
   height: fit-content;
@@ -178,15 +182,13 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
-.nav-icon img {
+.header .nav-icon img {
   width: 30px; height: 30px;
 }
-.nav-icon img:hover {
-  filter: brightness(0) saturate(150%) invert(10%) sepia(70%) saturate(500%) hue-rotate(140deg) contrast(150%);
+.header .nav-icon img:hover {
+  filter: url(filter.svg#green-filter);
 }
-/* .header h1{
-  color: transparent;
-} */
+
 .about {
   display: flex;
   justify-content: space-between;
