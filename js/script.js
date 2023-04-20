@@ -1,4 +1,50 @@
+function smoothScroll(event) {
+  event.preventDefault();
+  const targetId = event.target.getAttribute("href");
+  document.querySelector(targetId).scrollIntoView({
+    behavior: "smooth"
+  });
+}
 
+function scrollToTop() {
+  // Check if smooth scrolling is supported
+  if ('scrollBehavior' in document.documentElement.style) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    // Polyfill for browsers that do not support smooth scrolling
+    var scrollToTopInterval = setInterval(function() {
+      if (window.pageYOffset === 0) {
+        clearInterval(scrollToTopInterval);
+      } else {
+        window.scrollBy(0, -20);
+      }
+    }, 16.7);
+  }
+}
+
+// Show/hide scroll-to-top button based on scroll position
+window.addEventListener('scroll', function() {
+  var scrollToTopBtn = document.getElementById('scrollToTop');
+  if (window.pageYOffset > 0) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
+
+
+// Show/hide scroll-to-top button based on scroll position
+window.addEventListener('scroll', function() {
+  var scrollToTopBtn = document.getElementById('scrollToTop');
+  if (window.pageYOffset > 0) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
 window.onload = function() {
   work();
   skills();    
