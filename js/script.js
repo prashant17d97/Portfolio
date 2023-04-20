@@ -100,7 +100,7 @@ for (const project of projectsData) {
 
 
 var swiper = new Swiper(".swiper", {
-  slidesPerView: 1,
+  slidesPerView: 2,
   grabCursor: true,
   loop: true,
   spaceBetween: 10,
