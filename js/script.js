@@ -4,130 +4,121 @@ window.onload = function() {
   skills();    
 }
 // Array of testimonial objects
-const testimonials = [
+// Data object with project details
+const projectsData = [
   {
-    image: "resources/img1.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
-    name: "Marnie Lotter",
-    job: "Web Developer",
+    imgSrc: "https://play-lh.googleusercontent.com/fYROMKylBQtsHqAT4ASS2dfPrFW0bwFGH978Iu38UV8mEuUXN68acv1LjlPlmRNs9Q=s64-rw",
+    imgAlt: "image 1",
+    title: "Shiplovo Courior",
+    client: "Blandford sarl, Morrocow",
+    workLocation: "Apptunix, Mohali Punjab",
+    role: "Android Developer",
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, beatae soluta quos voluptate reiciendis est nam neque. Commodi eveniet veniam, rerum obcaecati cupiditate assumenda nemo asperiores perferendis error. Assumenda, maxime?̥",
+    link: "https://play.google.com/store/apps/details?id=com.shiplovo.driver"
   },
   {
-    image: "resources/img2.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
-    name: "Marnie Lotter",
-    job: "Web Developer",
+    imgSrc: "https://play-lh.googleusercontent.com/uDYVS96Sh56K1D5IlKLHRV2-Mk7zIhi2HmyqDYoW3uRlGLuP5j_wiyDB5X-0yACaOEQ=s64-rw",
+    imgAlt: "image 1",
+    title: "Shiplovo",
+    client: "Blandford sarl, Morrocow",
+    workLocation: "Apptunix, Mohali Punjab",
+    role: "Android Developer",
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, beatae soluta quos voluptate reiciendis est nam neque. Commodi eveniet veniam, rerum obcaecati cupiditate assumenda nemo asperiores perferendis error. Assumenda, maxime?̥",
+    link: "https://play.google.com/store/apps/details?id=com.shiplovo.customer"
   },
   {
-    image: "resources/img3.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
-    name: "Marnie Lotter",
-    job: "Web Developer",
+    imgSrc: "https://play-lh.googleusercontent.com/krAkeWVUtPw04zMURHQWWqkEHA_542ET2KHzBb_-B3VJRyms8vqpbGA7OuBhX97xF7M=s64-rw",
+    imgAlt: "image 1",
+    title: "CURE: All Things Health",
+    client: "CURE Group GmbH, Germany",
+    workLocation: "Apptunix, Mohali Punjab",
+    role: "Android Developer",
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, beatae soluta quos voluptate reiciendis est nam neque. Commodi eveniet veniam, rerum obcaecati cupiditate assumenda nemo asperiores perferendis error. Assumenda, maxime?̥",
+    link: "https://play.google.com/store/apps/details?id=app.getcure.customer"
   },
-  {
-    image: "resources/img5.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
-    name: "Marnie Lotter",
-    job: "Web Developer",
-  },
-  {
-    image: "resources/img6.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
-    name: "Marnie Lotter",
-    job: "Web Developer",
-  },
-  {
-    image: "resources/img7.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.",
-    name: "Marnie Lotter",
-    job: "Web Developer",
-  },
-  // Add more testimonial objects as needed
+  // Add more project objects as needed
 ];
 
-// Get the swiper-wrapper element
-const swiperWrapper = document.querySelector(".project-content.swiper-wrapper");
+// Retrieve the parent element to append the project content
+const projectContentWrapper = document.querySelector('.project-content.swiper-wrapper');
 
-// Loop through the testimonials array and create HTML elements
-testimonials.forEach((testimonial) => {
-  // Create testimonial slide element
-  const slide = document.createElement("div");
-  slide.className = "slide swiper-slide";
+// Loop through the projects data and create HTML elements
+for (const project of projectsData) {
+  // Create slide div
+  const slideDiv = document.createElement('div');
+  slideDiv.classList.add('slide', 'swiper-slide');
 
-  // Create testimonial image element
-  const image = document.createElement("img");
-  image.src = testimonial.image;
-  image.alt = "";
-  image.className = "image";
-  slide.appendChild(image);
+  // Create img element
+  const imgElem = document.createElement('img');
+  imgElem.src = project.imgSrc;
+  imgElem.alt = project.imgAlt;
+  imgElem.classList.add('image');
 
-  // Create testimonial text element
-  const text = document.createElement("p");
-  text.textContent = testimonial.text;
-  slide.appendChild(text);
+  // Create details div
+  const detailsDiv = document.createElement('div');
+  detailsDiv.classList.add('details');
 
-  // Create testimonial quote icon element
-  const quoteIcon = document.createElement("i");
-  quoteIcon.className = "bx bxs-quote-alt-left quote-icon";
-  slide.appendChild(quoteIcon);
+  // Create h2 element for title
+  const titleElem = document.createElement('h2');
+  titleElem.textContent = project.title;
 
-  // Create testimonial details element
-  const details = document.createElement("div");
-  details.className = "details";
+  // Create other_details divs for client, work location, role, and description
+  const otherDetailsDivs = [];
+  const detailsKeys = ['client', 'workLocation', 'role', 'description'];
+  for (const key of detailsKeys) {
+    const detailDiv = document.createElement('div');
+    detailDiv.classList.add('other_details');
+    const h3Elem = document.createElement('h4');
+    h3Elem.textContent = key === 'client' ? 'Client:' : (key === 'workLocation' ? 'Work Location:' : (key === 'role' ? 'Role:' : 'Description:'));
+    const pElem = document.createElement('p');
+    pElem.textContent = project[key];
+    detailDiv.appendChild(h3Elem);
+    detailDiv.appendChild(pElem);
+    otherDetailsDivs.push(detailDiv);
+  }
 
-  // Create testimonial name element
-  const name = document.createElement("span");
-  name.className = "name";
-  name.textContent = testimonial.name;
-  details.appendChild(name);
+  // Create link element
+  const linkElem = document.createElement('a');
+  linkElem.href = project.link;
+  linkElem.target = '_blank';
+  const buttonElem = document.createElement('button');
+  buttonElem.classList.add('slider-button');
+  buttonElem.textContent = 'Learn More...';
+  linkElem.appendChild(buttonElem);
 
-  // Create testimonial job element
-  const job = document.createElement("span");
-  job.className = "job";
-  job.textContent = testimonial.job;
-  details.appendChild(job);
+  // Append created elements to slide div
+  detailsDiv.appendChild(titleElem);
+  otherDetailsDivs.forEach(detailDiv => detailsDiv.appendChild(detailDiv));
+  detailsDiv.appendChild(linkElem);
+  slideDiv.appendChild(imgElem);
+  slideDiv.appendChild(detailsDiv);
 
-  slide.appendChild(details);
+  // Append slide div to project content wrapper
+  projectContentWrapper.appendChild(slideDiv);
+}
 
-  // Add the testimonial slide element to the swiper-wrapper
-  swiperWrapper.appendChild(slide);
-});
 
 
 var swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   grabCursor: true,
   loop: true,
-  spaceBetween: 20,
+  spaceBetween: 10,
   centeredSlides: true,
   speed:1200,
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
   },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
-
-
-function smoothScroll(event) {
-  event.preventDefault();
-  const targetId = event.target.getAttribute("href");
-  document.querySelector(targetId).scrollIntoView({
-    behavior: "smooth"
-  });
-}
 
 
 
