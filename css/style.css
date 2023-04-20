@@ -39,7 +39,6 @@ body{
 .project-container .slide {
   display: flex;
   width: 100%;
-  box-shadow: 0 0 5px #27AE60;
   min-width: 20px;
   align-content: center;
   background-color: #212121;
@@ -48,6 +47,9 @@ body{
   border-radius: 20px;
 }
 
+.project-container .slide:hover {
+  box-shadow: 0 0 5px #27AE60;
+}
 /* swiper button css */
 .projects .nav-btn {
   height: 40px;
